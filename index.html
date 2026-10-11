@@ -1,87 +1,87 @@
-<!doctype html>
-<html lang="id" data-theme="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- The two brand grounds, in the order they are actually used: dark is the
-         default here, because the palette's dominant tone is already dark. -->
-    <meta name="theme-color" content="#48202e" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#fff6f7" media="(prefers-color-scheme: light)" />
-
-    <title>Astelica Kasdea - Fallen Angel VTuber Indonesia</title>
-    <meta
-      name="description"
-      content="Astelica Kasdea, fallen angel yang tinggal di dream realm. Stream dan cover di YouTube, update harian di X."
-    />
-    <meta name="author" content="Astelica Kasdea" />
-    <link rel="canonical" href="https://astelica-kasdea.vtube-info.xyz/" />
-
-    <meta property="og:type" content="profile" />
-    <meta property="og:site_name" content="Astelica Kasdea" />
-    <meta property="og:locale" content="id_ID" />
-    <meta property="og:title" content="Astelica Kasdea - Fallen Angel VTuber Indonesia" />
-    <meta
-      property="og:description"
-      content="Stream, cover, dan fan art dari #AstelicaKasdea."
-    />
-    <meta property="og:url" content="https://astelica-kasdea.vtube-info.xyz/" />
-    <meta property="og:image" content="https://astelica-kasdea.vtube-info.xyz/og-image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:type" content="image/png" />
-    <meta name="og:image:alt" content="Astelica Kasdea" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Astelica Kasdea - Fallen Angel" />
-    <meta
-      name="twitter:description"
-      content="Stream, cover, dan fan art dari #AstelicaKasdea."
-    />
-    <meta name="twitter:image" content="https://astelica-kasdea.vtube-info.xyz/og-image.png" />
-
-    <!-- The tab icon is the avatar itself, same file the social card uses.
-         iOS ignores WebP for touch icons, so that one stays PNG. -->
-    <link rel="icon" type="image/png" href="/og-image.png" />
-    <link rel="apple-touch-icon" href="/media/apple-touch-icon.png" />
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Astelica Kasdea",
-        "alternateName": ["@AstelicaKasdea", "@astelicakasdea"],
-        "description": "A fallen angel living in the dream realms. VTuber Indonesia.",
-        "url": "https://astelica-kasdea.vtube-info.xyz/",
-        "image": "https://astelica-kasdea.vtube-info.xyz/media/avatar-youtube.webp",
-        "sameAs": [
-          "https://www.youtube.com/@AstelicaKasdea",
-          "https://x.com/astelicakasdea"
-        ]
-      }
-    </script>
-
-    <script>
-      // Runs before first paint so the correct token set is already on screen.
-      // Without this, a dark-mode visitor eats one light flash on every load.
-      //
-      // Dark is the fallback rather than light, which is the reverse of the sites
-      // this was cloned from. Those have a pale brand colour, so light-first is
-      // obvious; the shadow tone here is a deep, heavy marun, and defaulting
-      // to light would mean the page argues with the artwork before the visitor
-      // has touched anything.
-      (function () {
-        try {
-          var stored = localStorage.getItem("kasdea-theme");
-          var prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-          document.documentElement.dataset.theme = stored || (prefersLight ? "light" : "dark");
-        } catch (e) {
-          document.documentElement.dataset.theme = "dark";
-        }
-      })();
-    </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<!doctype html>
+<html lang="id" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- The two brand grounds, in the order they are actually used: dark is the
+         default here, because the palette's dominant tone is already dark. -->
+    <meta name="theme-color" content="#48202e" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#fff6f7" media="(prefers-color-scheme: light)" />
+
+    <title>Astelica Kasdea - Fallen Angel VTuber Indonesia</title>
+    <meta
+      name="description"
+      content="Astelica Kasdea, fallen angel yang tinggal di dream realm. Stream dan cover di YouTube, update harian di X."
+    />
+    <meta name="author" content="Astelica Kasdea" />
+    <link rel="canonical" href="https://kasdea.vtube-info.xyz/" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Astelica Kasdea" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:title" content="Astelica Kasdea - Fallen Angel VTuber Indonesia" />
+    <meta
+      property="og:description"
+      content="Stream, cover, dan fan art dari #AstelicaKasdea."
+    />
+    <meta property="og:url" content="https://kasdea.vtube-info.xyz/" />
+    <meta property="og:image" content="https://kasdea.vtube-info.xyz/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta name="og:image:alt" content="Astelica Kasdea" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Astelica Kasdea - Fallen Angel" />
+    <meta
+      name="twitter:description"
+      content="Stream, cover, dan fan art dari #AstelicaKasdea."
+    />
+    <meta name="twitter:image" content="https://kasdea.vtube-info.xyz/og-image.png" />
+
+    <!-- The tab icon is the avatar itself, same file the social card uses.
+         iOS ignores WebP for touch icons, so that one stays PNG. -->
+    <link rel="icon" type="image/png" href="/og-image.png" />
+    <link rel="apple-touch-icon" href="/media/apple-touch-icon.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Astelica Kasdea",
+        "alternateName": ["@AstelicaKasdea", "@astelicakasdea"],
+        "description": "A fallen angel living in the dream realms. VTuber Indonesia.",
+        "url": "https://kasdea.vtube-info.xyz/",
+        "image": "https://kasdea.vtube-info.xyz/media/avatar-youtube.webp",
+        "sameAs": [
+          "https://www.youtube.com/@AstelicaKasdea",
+          "https://x.com/astelicakasdea"
+        ]
+      }
+    </script>
+
+    <script>
+      // Runs before first paint so the correct token set is already on screen.
+      // Without this, a dark-mode visitor eats one light flash on every load.
+      //
+      // Dark is the fallback rather than light, which is the reverse of the sites
+      // this was cloned from. Those have a pale brand colour, so light-first is
+      // obvious; the shadow tone here is a deep, heavy marun, and defaulting
+      // to light would mean the page argues with the artwork before the visitor
+      // has touched anything.
+      (function () {
+        try {
+          var stored = localStorage.getItem("kasdea-theme");
+          var prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+          document.documentElement.dataset.theme = stored || (prefersLight ? "light" : "dark");
+        } catch (e) {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

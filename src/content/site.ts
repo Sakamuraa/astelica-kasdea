@@ -34,7 +34,7 @@ export const site = {
    * and the site URL are the same thing. Kept in sync with index.html,
    * robots.txt, and sitemap.xml.
    */
-  url: "https://astelica-kasdea.vtube-info.xyz",
+  url: "https://kasdea.vtube-info.xyz",
   locale: "id_ID",
   avatar: "/media/avatar-youtube.webp",
   avatarAlt:
