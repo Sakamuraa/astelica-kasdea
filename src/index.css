@@ -69,6 +69,16 @@
   /* Text on a rose fill. Warm white is only 3.3:1 and even the shadow reaches
      just 3.9:1, so this goes darker than the shadow to clear 4.5. */
   --on-indigo: #2e1019;
+
+  /* Warm fills for the chat badges and the avatar placeholder.
+     StreamPage has used peach and cocoa since this template was first written,
+     and neither token was ever defined here -- those badges have been rendering
+     with no background at all. These sit in the rose half of her own palette
+     rather than importing a colour that belongs to a different creator. */
+  --peach: #b0435c;
+  --peach-soft: #f7dbe1;
+  --cocoa: #8a3049;
+  --cocoa-soft: #f2ccd5;
 }
 
 [data-theme="dark"] {
@@ -112,6 +122,15 @@
   --ink: #ffb3b8;
   --ink-hover: #ffc7cb;
   --on-indigo: #2e1019;
+
+  /* Lighter here than in light mode, for the same reason: a fill that has to
+     carry dark text in light mode cannot carry it against this ground. The
+     soft pair is nudged off --bg rather than into it -- at 1.05:1 the badge
+     would have been the same shade as the page behind it. */
+  --peach: #e0788c;
+  --peach-soft: #5a2d3b;
+  --cocoa: #f0a3b0;
+  --cocoa-soft: #63313f;
 }
 
 @theme inline {
@@ -135,6 +154,10 @@
   --color-ink: var(--ink);
   --color-ink-hover: var(--ink-hover);
   --color-on-indigo: var(--on-indigo);
+  --color-peach: var(--peach);
+  --color-peach-soft: var(--peach-soft);
+  --color-cocoa: var(--cocoa);
+  --color-cocoa-soft: var(--cocoa-soft);
 
   /* Cinzel for display: drawn from first-century Roman inscriptions, and it keeps
      that all-caps weight in the lowercase too, so every heading is set as though
