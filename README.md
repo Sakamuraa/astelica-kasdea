@@ -69,11 +69,16 @@ brief secara langsung:
 
 ## Tipografi
 
-- **Playfair Display** untuk display — Didone kontras tinggi dengan serif
-  hairline. Rambut-rambut tipisnya yang cocok: malaikat bersayap jatuh dengan
-  tanduk menuntut tepi, bukan pembulatan old-style lembut.
-- **Jost** untuk body — geometric dan tenang di 14px, menahan diri di depan
-  Didone yang sedecoratif ini.
+- **Cinzel** untuk display — digambar dari prasasti Romawi abad pertama, dan
+  bobot kapital itu ikut dibawa ke huruf kecil, jadi setiap heading terbaca
+  seperti **dipahat**, bukan diketik. Itu alasannya: "fallen angel" di sini dibaca
+  sebagai kerajaan yang jatuh, dan kerajaan meninggalkan prasasti. Cinzel hanya
+  untuk display karena x-height-nya rendah — bukan muka teks.
+- **Epilogue** untuk body — sembilan bobot pada satu sumbu, dan tidak bersaing
+  dengan display face yang sedeklaratif ini. Teks dibaca, heading dipandangi.
+
+Keduanya dipasang sebagai variable font; build hanya menarik dua berkas
+woff2 per subset.
 
 ## Stack
 

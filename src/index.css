@@ -1,6 +1,6 @@
 ﻿@import "tailwindcss";
-@import "@fontsource-variable/playfair-display/index.css";
-@import "@fontsource-variable/jost/index.css";
+@import "@fontsource-variable/cinzel/index.css";
+@import "@fontsource-variable/epilogue/index.css";
 
 /* ==========================================================================
    Design tokens
@@ -136,15 +136,17 @@
   --color-ink-hover: var(--ink-hover);
   --color-on-indigo: var(--on-indigo);
 
-  /* Playfair Display for display: a high-contrast Didone with hairline serifs and
-     a sharp vertical stress. The hairlines are what suit her -- a fallen angel
-     with horns wants an edge, not the soft old-style roundness the previous font
-     on this template had. It is display-only for that reason: at body size the
-     contrast is too fine to read comfortably. */
-  --font-display: "Playfair Display Variable", "Iowan Old Style", Georgia, serif;
-  /* Jost for everything else. Geometric and quiet at 14px, and it holds up
-     against a Didone this decorative without competing with it. */
-  --font-sans: "Jost Variable", ui-sans-serif, system-ui, -apple-system,
+  /* Cinzel for display: drawn from first-century Roman inscriptions, and it keeps
+     that all-caps weight in the lowercase too, so every heading is set as though
+     it were cut rather than typed. That is the point of the choice -- "fallen
+     angel" here reads as a fallen kingdom, and an inscription is what a kingdom
+     leaves behind. It is display-only for the usual reason it is: small caps at
+     heading size, with a low x-height, is not a text face. */
+  --font-display: "Cinzel Variable", "Trajan Pro", Georgia, serif;
+  /* Epilogue for everything else. Nine weights on a single axis, cleanly drawn,
+     and it stays out of the way of a display face this declarative -- the text is
+     read, the headings are looked at. */
+  --font-sans: "Epilogue Variable", ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", sans-serif;
 
   --radius-arch: 999px 999px 20px 20px;
