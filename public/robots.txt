@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://astelica-kasdea.vtube-info.xyz/sitemap.xml

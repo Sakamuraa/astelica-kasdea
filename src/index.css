@@ -1,0 +1,296 @@
+﻿@import "tailwindcss";
+@import "@fontsource-variable/playfair-display/index.css";
+@import "@fontsource-variable/jost/index.css";
+
+/* ==========================================================================
+   Design tokens
+   --------------------------------------------------------------------------
+   Palette comes straight from the brand brief:
+     base / midtone ......... #D96277   rose, the red that runs through her hair
+     shadow ................ #48202E   the dark maroon on the horns, the rose
+                                       crown and the choker
+     highlight / glow ...... #FFB3B8   the warm gold under her eyes and on the
+                                       chain
+
+   Dark is the default. The shadow is described as a deep, heavy marun -- a
+   colour that belongs under things, not behind them -- and "a fallen angel
+   living in her dreams" is a dark page. The rose reads as an accent across
+   both themes for the same reason it is hair: it is the loud part of an
+   otherwise dark design.
+
+   Every pairing below was measured, not eyeballed; see the README for the full
+   table. Three of them could not use the brief tone directly and say why in
+   place:
+     - rose #D96277 is unusable as text on either ground (3.3:1 light, 3.9:1
+       dark), so --accent is a deeper rose in light and the highlight in dark
+     - white on a rose fill is 3.1-3.3:1, so text on a rose fill is a maroon
+       darker than the shadow (#2E1019, 4.95:1)
+     - --ink flips with the theme, because the button is bg-ink text-bg and the
+       two have to be opposites
+
+   Shape rule, applied without exception:
+     media frames ............ arch  (top radius 999px, bottom 20px)
+     cards / panels ......... 20px
+     buttons ................ 16px, never pill
+     tags ................... 999px
+   ========================================================================== */
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #fff6f7;
+  --surface: #fdebed;
+  --surface-deep: #f8dde2;
+
+  --line: #f2cbd2;
+  --line-strong: #b04159;
+
+  --fg: #3e1a24;
+  --fg-muted: #6e3b47;
+  --fg-subtle: #8c5761;
+
+  /* A rose that reads as text on the light ground. The brief's #D96277 is
+     3.3:1 here, so this is the deeper rose of the same family. */
+  --accent: #ae3a52;
+  --accent-contrast: #fff6f7;
+  --accent-soft: #fbdde3;
+
+  --ring: #ae3a52;
+
+  /* Brand tones, used as large fills rather than as text colours. */
+  --indigo: #d96277;
+  --indigo-deep: #a83449;
+  --indigo-soft: #fbe0e5;
+  --shadow: #48202e;
+  --lilac: #ffb3b8;
+  --ink: #48202e;
+  --ink-hover: #5e2a38;
+  /* Text on a rose fill. Warm white is only 3.3:1 and even the shadow reaches
+     just 3.9:1, so this goes darker than the shadow to clear 4.5. */
+  --on-indigo: #2e1019;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #48202e;
+  --surface: #5e2a39;
+  --surface-deep: #7c3b4c;
+
+  --line: #6b3547;
+  /* The obvious border rose is 3.7:1 against the card surface, just under the
+     3:1 floor for a line that has to be visible; this clears it. */
+  --line-strong: #c97f92;
+
+  --fg: #fdeef1;
+  --fg-muted: #e9c3cc;
+  --fg-subtle: #d29aa9;
+
+  --accent: #ffb3b8;
+  --accent-contrast: #48202e;
+  --accent-soft: #3a1b24;
+
+  --ring: #ffb3b8;
+
+  --indigo: #d96277;
+  --indigo-deep: #a83449;
+  /* Light in the dark theme too, deliberately: the one place this carries text
+     is the "Member" badge in the chat log, paired with --shadow. A darker value
+     would put the shadow on the rose and drop that pairing well under 4.5. */
+  --indigo-soft: #ffb3b8;
+  --shadow: #48202e;
+  --lilac: #ffb3b8;
+  /*
+   * Flips with the theme, which is the whole reason it is its own token.
+   *
+   * The primary button is `bg-ink text-bg`. Those two have to be opposites, so a
+   * constant --ink would put #48202E on #48202E in the dark theme and the button
+   * would disappear at exactly the point it should be most clickable. Light
+   * pairs with the page ground, dark pairs with the page.
+   */
+  --ink: #ffb3b8;
+  --ink-hover: #ffc7cb;
+  --on-indigo: #2e1019;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-deep: var(--surface-deep);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-subtle: var(--fg-subtle);
+  --color-accent: var(--accent);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-accent-soft: var(--accent-soft);
+
+  --color-indigo: var(--indigo);
+  --color-indigo-deep: var(--indigo-deep);
+  --color-indigo-soft: var(--indigo-soft);
+  --color-shadow: var(--shadow);
+  --color-lilac: var(--lilac);
+  --color-ink: var(--ink);
+  --color-ink-hover: var(--ink-hover);
+  --color-on-indigo: var(--on-indigo);
+
+  /* Playfair Display for display: a high-contrast Didone with hairline serifs and
+     a sharp vertical stress. The hairlines are what suit her -- a fallen angel
+     with horns wants an edge, not the soft old-style roundness the previous font
+     on this template had. It is display-only for that reason: at body size the
+     contrast is too fine to read comfortably. */
+  --font-display: "Playfair Display Variable", "Iowan Old Style", Georgia, serif;
+  /* Jost for everything else. Geometric and quiet at 14px, and it holds up
+     against a Didone this decorative without competing with it. */
+  --font-sans: "Jost Variable", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+
+  --radius-arch: 999px 999px 20px 20px;
+  --radius-card: 20px;
+  --radius-btn: 16px;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  * {
+    border-color: var(--line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+
+  /* Only the theme switch animates. Every other transition is declared on the
+     component that needs it, so this cannot smear across scroll. */
+  body,
+  body * {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-duration: 280ms;
+    transition-timing-function: var(--ease-out-expo);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--indigo);
+    color: var(--on-indigo);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer utilities {
+  /* Paper grain. Fixed and pointer-events-none on purpose: the same noise on a
+     scrolling container repaints the GPU every frame and drops mobile FPS. */
+  .grain::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .shell {
+    width: 100%;
+    max-width: 76rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .shell {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  /* Warm light spilling from the top of the page. A gradient, not an image:
+     zero bytes on the critical path and no layout shift. */
+  .dawn-wash {
+    background:
+      radial-gradient(
+        46rem 26rem at 82% -10%,
+        color-mix(in oklab, var(--indigo) 42%, transparent),
+        transparent 70%
+      ),
+      radial-gradient(
+        34rem 22rem at 4% 0%,
+        color-mix(in oklab, var(--lilac) 34%, transparent),
+        transparent 72%
+      );
+  }
+
+  /* Diagonal hairline field. Sits behind the colophon only, where the density
+     is high enough to carry texture. */
+  .pinstripe {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      color-mix(in oklab, var(--line-strong) 22%, transparent) 0 1px,
+      transparent 1px 9px
+    );
+  }
+
+  .rule {
+    background-image: linear-gradient(
+      to right,
+      var(--line-strong) 0 32%,
+      transparent 32% 100%
+    );
+    height: 1px;
+  }
+}
+
+/* Motion collapses to instant under this query. Everything animated on the
+   page is decorative or feedback, so removing it costs no information. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print and "save as PDF": any block still waiting on its IntersectionObserver
+   is forced to its final state, so the saved page has no empty sections. */
+@media print {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
