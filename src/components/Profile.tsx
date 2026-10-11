@@ -61,19 +61,19 @@ export function Profile({ detail = false }: { detail?: boolean } = {}) {
 
         <div className={`grid gap-14 md:grid-cols-12 md:gap-12 ${detail ? "mt-16" : ""}`}>
           <Reveal className="md:col-span-5" amount={0.3}>
-            {/* Verbatim from her channel description: "The Moon of Eternal Gryph".
-                A subheading here because the h1 above already exists on the
-                detail route. */}
+            {/* Verbatim from her channel description: "a fallen angel living in the dream
+                realms". A subheading here because the h1 above already exists on
+                the detail route. */}
             {detail ? (
               <h2 className="text-3xl font-semibold leading-tight tracking-tight md:text-4xl">
-                The Moon of Eternal Gryph
+                A fallen angel living in the dream realms
               </h2>
             ) : (
               <h2
                 id="profile-heading"
                 className="text-3xl font-semibold leading-tight tracking-tight md:text-4xl"
               >
-                The Moon of Eternal Gryph
+                A fallen angel living in the dream realms
               </h2>
             )}
 
